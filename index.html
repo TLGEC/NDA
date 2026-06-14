@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>NDA Agreement | James Cooling</title>
+  <title>NDA | James Cooling</title>
   <meta name="theme-color" content="#09291f">
   <style>
     :root{
@@ -14,486 +14,331 @@
       --mint:#eef8ef;
       --line:#d6e2d7;
       --ink:#0b1f18;
+      --muted:#5e6f66;
       --soft:#f6f8f3;
       --danger:#9e2f2f;
     }
     *{box-sizing:border-box}
     body{margin:0;background:linear-gradient(180deg,#f7faf4 0%,#eef6e8 100%);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);font-size:17px}
     header{background:linear-gradient(135deg,var(--deep) 0%,#0d5a3b 70%,var(--green) 100%);color:white;padding:34px 18px 44px}
-    .wrap{max-width:980px;margin:0 auto}
-    .hero{display:grid;grid-template-columns:1fr;gap:18px}
+    .wrap{max-width:920px;margin:0 auto}
     .kicker{font-size:13px;text-transform:uppercase;letter-spacing:.16em;font-weight:900;color:#dff4c7}
     h1{font-size:42px;line-height:1.02;margin:6px 0 10px}
     header p{max-width:760px;font-size:18px;color:#f0ffe8;line-height:1.5;margin:0}
-    main{max-width:980px;margin:-28px auto 40px;padding:0 14px}
+    main{max-width:920px;margin:-28px auto 40px;padding:0 14px}
     .card{background:white;border:1px solid var(--line);border-radius:26px;padding:24px;margin:16px 0;box-shadow:0 12px 28px rgba(9,41,31,.08)}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     label{display:block;font-weight:850;margin:10px 0 6px}
-    input,textarea{width:100%;border:1px solid #c8d6cd;border-radius:16px;padding:14px 15px;font:inherit;background:#fff;color:var(--ink)}
-    textarea{min-height:94px;line-height:1.45}
+    input{width:100%;border:1px solid #c8d6cd;border-radius:16px;padding:14px 15px;font:inherit;background:#fff;color:var(--ink)}
     .agreement{background:#f9fbf7;border:1px solid var(--line);border-radius:22px;padding:20px;line-height:1.58;max-height:430px;overflow:auto}
     .agreement h2{margin:0 0 12px;font-size:24px}
     .agreement h3{margin:20px 0 8px;font-size:18px;color:var(--deep)}
     .agreement p{margin:0 0 10px}
     .agreement ul{margin:8px 0 12px;padding-left:22px}
-    .sigbox{background:var(--mint);border:1px solid var(--line);border-radius:22px;padding:16px}
-    canvas{width:100%;height:190px;background:white;border:2px dashed #a5b8ab;border-radius:18px;display:block;touch-action:none}
-    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    button{border:0;border-radius:999px;padding:14px 18px;font:inherit;font-weight:900;cursor:pointer}
-    .primary{background:var(--green);color:white}
-    .secondary{background:#eef3ef;color:var(--ink);border:1px solid var(--line)}
-    .danger{background:#f8e9e9;color:var(--danger);border:1px solid #e7c5c5}
-    .checkline{display:flex;gap:10px;align-items:flex-start;background:#f7faf4;border:1px solid var(--line);border-radius:18px;padding:14px;margin:14px 0}
-    .checkline input{width:auto;transform:scale(1.2);margin-top:4px}
-    .status{padding:16px;border-radius:18px;background:#eef8ef;border:1px solid #cfe4d0;margin-top:12px;line-height:1.45}
-    .status.warn{background:#fff8e8;border-color:#ead8a8}
-    .status.err{background:#fff0f0;border-color:#e2b5b5;color:#7d2323}
-    .small{font-size:13px;color:#617166;line-height:1.4}
-    .hidden{display:none!important}
-    .ref{font-weight:950;color:var(--deep)}
-    .pillbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-    .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.24);color:white;border-radius:999px;padding:8px 12px;font-weight:800;font-size:14px}
-    .footerNote{font-size:13px;color:#627168;text-align:center;padding:18px}
-    .emailBox{background:#062819;color:#effff4;border-radius:20px;padding:16px;white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;overflow:auto}
-    @media(max-width:720px){
-      h1{font-size:34px}
-      .grid{grid-template-columns:1fr}
-      .card{padding:18px;border-radius:22px}
-    }
-    @media print{
-      header,.noPrint,.actions,button{display:none!important}
-      main{margin:0;max-width:none}
-      .card{box-shadow:none;border:0;margin:0;padding:0}
-      body{background:white;font-size:12px}
-      .agreement{max-height:none;overflow:visible;border:0;padding:0}
-    }
+    .sigBox{border:1px solid var(--line);background:#fff;border-radius:20px;padding:14px}
+    canvas{width:100%;height:190px;border:2px dashed #a7b9ac;border-radius:16px;background:white;display:block;touch-action:none}
+    .check{display:flex;gap:10px;align-items:flex-start;background:var(--mint);border:1px solid var(--line);border-radius:18px;padding:14px;margin:14px 0}
+    .check input{width:auto;margin-top:5px;transform:scale(1.2)}
+    button{font:inherit;border:0;border-radius:999px;padding:15px 18px;font-weight:900;cursor:pointer}
+    .primary{width:100%;background:linear-gradient(135deg,var(--deep) 0%,#0b7a46 68%,var(--green) 100%);color:white;box-shadow:0 10px 24px rgba(9,41,31,.16)}
+    .secondary{background:#edf4ed;color:var(--deep);border:1px solid var(--line);padding:11px 14px}
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .status{display:none;margin-top:14px;padding:14px 16px;border-radius:18px;background:#eef8ef;border:1px solid var(--line);line-height:1.4;font-weight:750}
+    .status.err{display:block;background:#fff2f2;border-color:#efcaca;color:#7f1e1e}
+    .status.ok{display:block;background:#eef8ef;border-color:#cfe5d2;color:#0d5138}
+    .status.warn{display:block;background:#fff9e9;border-color:#ecd99f;color:#664d04}
+    .fine{color:var(--muted);font-size:14px;line-height:1.4}
+    .footerNote{text-align:center;color:var(--muted);font-size:13px;margin:20px 0}
+    @media(max-width:720px){.grid{grid-template-columns:1fr}h1{font-size:34px}.card{padding:18px;border-radius:22px}}
+    @media print{header,.noPrint,.footerNote{display:none!important}main{margin:0;max-width:none}.card{box-shadow:none;border:0}}
   </style>
 </head>
 <body>
 <header>
-  <div class="wrap hero">
-    <div>
-      <div class="kicker">Confidential app demonstration</div>
-      <h1>Non-Disclosure Agreement</h1>
-      <p>This page is for viewing and accepting James Cooling’s NDA before seeing, discussing or testing the survey app, business process, workflow, design, documentation or related commercial material.</p>
-      <div class="pillbar">
-        <span class="pill">James Cooling</span>
-        <span class="pill">Confidential demo</span>
-        <span class="pill">Electronic acceptance</span>
-      </div>
-    </div>
+  <div class="wrap">
+    <div class="kicker">Confidential app demonstration</div>
+    <h1>Non-Disclosure Agreement</h1>
+    <p>This page is for viewing and accepting James Cooling’s NDA before seeing, discussing or testing the survey app, workflow, design, documentation or related commercial material.</p>
   </div>
 </header>
 
 <main>
   <section class="card">
     <h2>Your details</h2>
-    <p class="small">Please complete these details before accepting the NDA. A signed PDF can be created from this page and sent to James Cooling.</p>
     <div class="grid">
-      <label>Full name<input id="fullName" autocomplete="name" required></label>
-      <label>Email address<input id="email" type="email" autocomplete="email" required></label>
-      <label>Company / organisation<input id="company" autocomplete="organization"></label>
-      <label>Role / title<input id="role"></label>
+      <label>Full name<input id="fullName" autocomplete="name" placeholder="Your full name"></label>
+      <label>Email address<input id="email" type="email" autocomplete="email" placeholder="you@example.com"></label>
+      <label>Company<input id="company" autocomplete="organization" placeholder="Company name"></label>
+      <label>Role / title<input id="role" placeholder="Director, owner, consultant..."></label>
     </div>
-    <label>Purpose of discussion<textarea id="purpose" placeholder="Example: Review of survey app demonstration and potential commercial opportunity."></textarea></label>
   </section>
 
   <section class="card">
-    <div class="agreement" id="agreementText">
+    <div class="agreement" id="ndaText">
       <h2>Non-Disclosure Agreement</h2>
-      <p><strong>Date:</strong> <span id="todayText"></span></p>
-      <p><strong>Disclosing party:</strong> James Cooling.</p>
-      <p><strong>Receiving party:</strong> the person completing and accepting this agreement below.</p>
+      <p><strong>Discloser:</strong> James Cooling.</p>
+      <p><strong>Recipient:</strong> the person named above.</p>
+      <p><strong>Purpose:</strong> discussion, demonstration, review or testing of James Cooling’s app concept, software, workflow, design, business process, documentation, commercial model or related material.</p>
 
-      <h3>1. Purpose</h3>
-      <p>The receiving party may be shown, told about, or given access to confidential information relating to a survey app, sales workflow, customer journey, product concept, templates, pricing approach, operational process, demonstration material, documentation, designs, code structure, data capture approach, export packs, commercial plans and related know-how owned or controlled by James Cooling.</p>
-
-      <h3>2. Confidential information</h3>
+      <h3>1. Confidential information</h3>
       <p>Confidential information includes anything disclosed verbally, visually, electronically, in writing, by demonstration, by screen share, by test access, by document, by image, by video, or by discussion that relates to the app, product, process, business model, commercial opportunity or supporting materials.</p>
 
-      <h3>3. Obligations</h3>
-      <p>The receiving party agrees to:</p>
-      <ul>
-        <li>keep the confidential information private and secure;</li>
-        <li>use it only for the purpose of evaluating or discussing the opportunity with James Cooling;</li>
-        <li>not copy, record, screenshot, screen-record, reproduce, reverse engineer, share, publish or disclose it without written permission;</li>
-        <li>not use the information to build, commission, assist, market or improve a competing product or process;</li>
-        <li>only share the information with advisers or colleagues where strictly necessary and only where they are bound by equivalent confidentiality duties.</li>
-      </ul>
+      <h3>2. Obligations</h3>
+      <p>The recipient agrees to keep the confidential information private and to use it only for the purpose above. The recipient must not copy, share, publish, disclose, reverse engineer, reproduce, develop, adapt, commercialise, or use the confidential information for their own benefit or for a third party without written permission from James Cooling.</p>
 
-      <h3>4. Exclusions</h3>
-      <p>This agreement does not apply to information that the receiving party can prove was already lawfully known to them, is public through no breach of this agreement, is independently developed without using the confidential information, or is received lawfully from a third party without confidentiality restrictions.</p>
+      <h3>3. Screenshots, recording and copying</h3>
+      <p>The recipient must not take screenshots, screen recordings, photographs, videos, notes intended to replicate the system, or copies of any materials unless James Cooling gives written permission.</p>
 
-      <h3>5. Ownership</h3>
-      <p>All intellectual property, concepts, designs, workflows, documents, demonstrations, code, app logic, templates, commercial material and related rights remain the property of James Cooling or his licensors. No licence, assignment or right to use the information is granted except for the limited evaluation purpose above.</p>
+      <h3>4. Ownership</h3>
+      <p>All intellectual property, ideas, software, workflows, layouts, documents, logic, commercial model, branding, data structures and related materials remain owned by James Cooling unless separately agreed in writing.</p>
 
-      <h3>6. Return and deletion</h3>
-      <p>On request, the receiving party must promptly return or delete confidential information, including copies, notes, extracts, screenshots, recordings, downloads or derivative material, except where retention is required by law or for professional compliance records.</p>
+      <h3>5. Exclusions</h3>
+      <p>This agreement does not apply to information that is already public through no fault of the recipient, already known to the recipient before disclosure, or lawfully received from another source without confidentiality obligations.</p>
 
-      <h3>7. Term</h3>
-      <p>The confidentiality obligations continue for five years from the date of acceptance. Trade secrets and highly sensitive technical or commercial information remain protected for as long as they remain confidential.</p>
+      <h3>6. Return or deletion</h3>
+      <p>On request, the recipient must return or delete confidential information and any copies, notes or extracts made from it.</p>
 
-      <h3>8. No obligation to proceed</h3>
-      <p>Nothing in this agreement requires either party to proceed with any transaction, partnership, licence, sale, pilot or commercial arrangement.</p>
+      <h3>7. Duration</h3>
+      <p>The confidentiality obligations continue for 5 years from the date of acceptance. Trade secrets and highly sensitive business or technical information remain protected for as long as they are not public.</p>
+
+      <h3>8. Electronic acceptance</h3>
+      <p>By completing the fields, ticking the agreement box and signing electronically, the recipient confirms that they accept this agreement and intend the electronic signature to be binding.</p>
 
       <h3>9. Governing law</h3>
-      <p>This agreement is governed by the laws of England and Wales, and the courts of England and Wales shall have jurisdiction.</p>
-
-      <h3>10. Electronic acceptance</h3>
-      <p>By completing the form, ticking the confirmation box and signing electronically, the receiving party agrees that their electronic acceptance is intended to be legally binding.</p>
+      <p>This agreement is governed by the laws of England and Wales.</p>
     </div>
   </section>
 
   <section class="card">
-    <h2>Signature and acceptance</h2>
-    <div class="sigbox">
-      <label>Electronic signature</label>
-      <canvas id="sigCanvas" width="1200" height="360"></canvas>
-      <div class="actions noPrint">
+    <h2>Signature</h2>
+    <p class="fine">Sign in the box below, tick the agreement confirmation, then use the button to download the signed PDF and open an email draft addressed to James.</p>
+    <div class="sigBox">
+      <canvas id="sigCanvas" width="900" height="260"></canvas>
+      <div class="row noPrint" style="margin-top:10px">
         <button class="secondary" type="button" id="clearSig">Clear signature</button>
       </div>
     </div>
 
-    <div class="checkline">
-      <input id="agreeCheck" type="checkbox">
-      <div>
-        <strong>I have read and agree to this NDA.</strong>
-        <div class="small">I confirm that I am accepting this agreement electronically and that the details I have entered are accurate.</div>
-      </div>
-    </div>
+    <label class="check">
+      <input id="agree" type="checkbox">
+      <span>I have read and agree to this Non-Disclosure Agreement and confirm that my electronic signature is intended to be binding.</span>
+    </label>
 
-    <div class="actions noPrint">
-      <button class="primary" id="acceptBtn" type="button">Accept NDA and prepare email</button>
-      <button class="secondary" id="downloadPdfBtn" type="button">Download PDF</button>
-      <button class="secondary" id="printBtn" type="button">Print / save as PDF</button>
-    </div>
-
-    <div id="statusBox" class="status warn">
-      This page creates a signed NDA PDF on this device. It will then try to open your share/email app with the signed PDF ready to send to James Cooling.
-    </div>
+    <button class="primary noPrint" type="button" id="acceptBtn">Download signed PDF and email James</button>
+    <div id="statusBox" class="status"></div>
+    <p class="fine noPrint" style="margin-top:12px">The PDF will download first. Your email draft will then open addressed to james.cooling@gmail.com with the subject already set. Attach the downloaded PDF if your email app does not attach it automatically.</p>
   </section>
 
-  <section id="resultCard" class="card hidden">
-    <h2>Accepted NDA confirmation</h2>
-    <p><strong>Reference:</strong> <span class="ref" id="refOut"></span></p>
-    <p><strong>Accepted at:</strong> <span id="timeOut"></span></p>
-    <p><strong>Name:</strong> <span id="nameOut"></span></p>
-    <p><strong>Email:</strong> <span id="emailOut"></span></p>
-    <div class="actions noPrint">
-      <button class="primary" id="sendAgainBtn" type="button">Send PDF again</button>
-      <button class="secondary" id="downloadConfirmationBtn" type="button">Download confirmation TXT</button>
-      <button class="secondary" id="openEmailBtn" type="button">Open email draft</button>
-    </div>
-    <h3>Manual fallback email text</h3>
-    <div id="emailText" class="emailBox"></div>
-  </section>
-
-  <div class="footerNote">NDA page for James Cooling. This page is separate from the LG Survey app.</div>
+  <div class="footerNote">NDA page for James Cooling. This page does not store submitted information.</div>
 </main>
 
-<!-- PDF generation library. Required for signed PDF creation. -->
 <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 <script>
-/*
-SETUP REQUIRED FOR AUTOMATIC EMAIL:
-GitHub Pages is static and cannot send email by itself.
-Add a secure endpoint here, for example a Netlify/Vercel function, Make/Zapier webhook, Formspree/Web3Forms/EmailJS endpoint, etc.
-
-Recommended endpoint behaviour:
-- Accept POST FormData containing:
-  signed_nda_pdf: PDF file
-  fullName, email, company, role, purpose, reference, acceptedAt, ownerEmail
-- Email the PDF attachment to OWNER_EMAIL.
-*/
-
 const OWNER_EMAIL = "james.cooling@gmail.com";
-
-const $ = id => document.getElementById(id);
-const today = new Date();
-$('todayText').textContent = today.toLocaleDateString('en-GB');
-
 let signatureData = "";
-let lastPdfBlob = null;
-let lastPayload = null;
-let lastPdfFile = null;
 
+function $(id){ return document.getElementById(id); }
+function trim(id){ return ($(id).value || "").trim(); }
+function status(msg, type){
+  const box = $("statusBox");
+  box.className = "status " + (type || "ok");
+  box.innerHTML = msg;
+}
 function safeFileName(s){
-  return (s || "signed-nda").toString().trim().replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'').slice(0,80) || "signed-nda";
+  return (s || "Signed NDA").replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").trim() || "Signed NDA";
 }
-function makeRef(){
-  const d = new Date();
-  return "NDA-" + d.getFullYear() + String(d.getMonth()+1).padStart(2,'0') + String(d.getDate()).padStart(2,'0') + "-" + Math.random().toString(36).slice(2,8).toUpperCase();
+function nowStamp(){
+  return new Date().toLocaleString("en-GB", {dateStyle:"medium", timeStyle:"short"});
 }
-function getPayload(existingRef){
+function refCode(){
+  return "NDA-" + new Date().toISOString().replace(/[-:.TZ]/g,"").slice(0,14) + "-" + Math.random().toString(36).slice(2,6).toUpperCase();
+}
+function validate(){
+  if(!trim("fullName")) return "Please enter your full name.";
+  if(!trim("email")) return "Please enter your email address.";
+  if(!signatureData) return "Please sign in the signature box.";
+  if(!$("agree").checked) return "Please tick the agreement confirmation.";
+  return "";
+}
+function payload(){
   return {
-    fullName: $('fullName').value.trim(),
-    email: $('email').value.trim(),
-    company: $('company').value.trim(),
-    role: $('role').value.trim(),
-    purpose: $('purpose').value.trim(),
-    acceptedAt: new Date().toISOString(),
-    reference: existingRef || makeRef(),
-    ownerEmail: OWNER_EMAIL,
+    fullName: trim("fullName"),
+    email: trim("email"),
+    company: trim("company"),
+    role: trim("role"),
+    reference: refCode(),
+    acceptedAt: nowStamp(),
     signatureData
   };
 }
-function validate(){
-  if(!$('fullName').value.trim()) return "Please enter your full name.";
-  if(!$('email').value.trim() || !$('email').value.includes('@')) return "Please enter a valid email address.";
-  if(!$('agreeCheck').checked) return "Please tick the agreement box.";
-  if(!signatureData) return "Please sign in the signature box.";
-  return "";
+function wrap(doc, text, x, y, maxW, lineH){
+  const lines = doc.splitTextToSize(text || "", maxW);
+  lines.forEach(line => { doc.text(line, x, y); y += lineH; });
+  return y;
 }
-
-function status(msg, cls){
-  const el=$('statusBox');
-  el.textContent = msg;
-  el.className = 'status ' + (cls || '');
-}
-function showResult(payload){
-  $('resultCard').classList.remove('hidden');
-  $('refOut').textContent = payload.reference;
-  $('timeOut').textContent = new Date(payload.acceptedAt).toLocaleString('en-GB');
-  $('nameOut').textContent = payload.fullName;
-  $('emailOut').textContent = payload.email;
-  $('emailText').textContent = buildFallbackEmail(payload);
-}
-function buildFallbackEmail(p){
-  return `To: ${OWNER_EMAIL}
-Subject: ${p.fullName} NDA
-
-Hi James,
-
-Please find attached my signed NDA.
-
-Name: ${p.fullName}
-Email: ${p.email}
-Company: ${p.company || 'Not provided'}
-Role: ${p.role || 'Not provided'}
-Purpose: ${p.purpose || 'Review of app demonstration'}
-Reference: ${p.reference}
-Accepted at: ${new Date(p.acceptedAt).toLocaleString('en-GB')}
-
-Kind regards,
-
-${p.fullName}`;
-}
-
-async function createPdf(payload){
-  if(!window.jspdf || !window.jspdf.jsPDF){
-    throw new Error("PDF library has not loaded. Check internet connection or use Print / save as PDF.");
-  }
+async function createPdf(p){
   const { jsPDF } = window.jspdf;
-  const doc = new jsPDF({unit:'mm',format:'a4'});
-  const margin = 16;
-  const pageW = 210;
-  const pageH = 297;
-  let y = 16;
+  const doc = new jsPDF({unit:"pt", format:"a4"});
+  const W = doc.internal.pageSize.getWidth();
+  const H = doc.internal.pageSize.getHeight();
+  const m = 48;
+  let y = 52;
 
-  function addPageIfNeeded(extra){
-    if(y + extra > pageH - 18){
-      doc.addPage();
-      y = 16;
-    }
-  }
-  function textBlock(text, x, width, size=10, lineH=5){
-    doc.setFontSize(size);
-    const lines = doc.splitTextToSize(text, width);
-    for(const line of lines){
-      addPageIfNeeded(lineH);
-      doc.text(line, x, y);
-      y += lineH;
-    }
-  }
-  function heading(t){
-    addPageIfNeeded(12);
-    doc.setFont('helvetica','bold');
-    doc.setFontSize(14);
-    doc.setTextColor(9,41,31);
-    doc.text(t, margin, y);
-    y += 7;
+  function header(title){
+    doc.setFillColor(9,41,31);
+    doc.rect(0,0,W,96,"F");
+    doc.setTextColor(255,255,255);
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(20);
+    doc.text(title, m, 42);
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(10);
+    doc.text("James Cooling | Confidential app demonstration", m, 62);
     doc.setTextColor(11,31,24);
-    doc.setFont('helvetica','normal');
+    y = 126;
+  }
+  function h(txt){
+    if(y > H-95){ doc.addPage(); header("Non-Disclosure Agreement");}
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(12);
+    doc.setTextColor(9,75,52);
+    doc.text(txt, m, y);
+    y += 16;
+    doc.setTextColor(11,31,24);
+  }
+  function ptxt(txt){
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(9.8);
+    y = wrap(doc, txt, m, y, W-(m*2), 13);
+    y += 8;
   }
 
-  doc.setFillColor(9,41,31);
-  doc.roundedRect(0,0,210,40,0,0,'F');
-  doc.setTextColor(255,255,255);
-  doc.setFont('helvetica','bold');
-  doc.setFontSize(22);
-  doc.text("Non-Disclosure Agreement", margin, 18);
-  doc.setFontSize(11);
-  doc.text("James Cooling | Confidential app demonstration", margin, 28);
+  header("Signed Non-Disclosure Agreement");
 
-  y = 52;
+  doc.setFillColor(239,248,239);
+  doc.roundedRect(m, y, W-(m*2), 128, 14, 14, "F");
+  doc.setFont("helvetica","bold");
+  doc.setFontSize(11);
+  doc.setTextColor(9,75,52);
+  doc.text("Signed by", m+18, y+28);
+  doc.text("Reference", W/2, y+28);
   doc.setTextColor(11,31,24);
-  doc.setFont('helvetica','bold');
+  doc.setFont("helvetica","normal");
+  doc.text(p.fullName, m+18, y+48);
+  doc.text(p.email, m+18, y+65);
+  doc.text(p.company || "Not provided", m+18, y+82);
+  doc.text(p.role || "Not provided", m+18, y+99);
+  doc.text(p.reference, W/2, y+48);
+  doc.text("Accepted: " + p.acceptedAt, W/2, y+65);
+  y += 156;
+
+  h("Agreement details");
+  ptxt("Discloser: James Cooling.");
+  ptxt("Recipient: " + p.fullName + ".");
+  ptxt("Purpose: discussion, demonstration, review or testing of James Cooling's app concept, software, workflow, design, business process, documentation, commercial model or related material.");
+
+  h("1. Confidential information");
+  ptxt("Confidential information includes anything disclosed verbally, visually, electronically, in writing, by demonstration, by screen share, by test access, by document, by image, by video, or by discussion that relates to the app, product, process, business model, commercial opportunity or supporting materials.");
+
+  h("2. Obligations");
+  ptxt("The recipient agrees to keep the confidential information private and to use it only for the purpose above. The recipient must not copy, share, publish, disclose, reverse engineer, reproduce, develop, adapt, commercialise, or use the confidential information for their own benefit or for a third party without written permission from James Cooling.");
+
+  h("3. Screenshots, recording and copying");
+  ptxt("The recipient must not take screenshots, screen recordings, photographs, videos, notes intended to replicate the system, or copies of any materials unless James Cooling gives written permission.");
+
+  h("4. Ownership");
+  ptxt("All intellectual property, ideas, software, workflows, layouts, documents, logic, commercial model, branding, data structures and related materials remain owned by James Cooling unless separately agreed in writing.");
+
+  h("5. Exclusions");
+  ptxt("This agreement does not apply to information that is already public through no fault of the recipient, already known to the recipient before disclosure, or lawfully received from another source without confidentiality obligations.");
+
+  h("6. Return or deletion");
+  ptxt("On request, the recipient must return or delete confidential information and any copies, notes or extracts made from it.");
+
+  h("7. Duration");
+  ptxt("The confidentiality obligations continue for 5 years from the date of acceptance. Trade secrets and highly sensitive business or technical information remain protected for as long as they are not public.");
+
+  h("8. Electronic acceptance");
+  ptxt("By completing the fields, ticking the agreement box and signing electronically, the recipient confirms that they accept this agreement and intend the electronic signature to be binding.");
+
+  h("9. Governing law");
+  ptxt("This agreement is governed by the laws of England and Wales.");
+
+  if(y > H-205){ doc.addPage(); header("Signature"); }
+  doc.setDrawColor(185,205,190);
+  doc.roundedRect(m, y+10, W-(m*2), 128, 12, 12);
+  doc.setFont("helvetica","bold");
   doc.setFontSize(11);
-  doc.text("Acceptance summary", margin, y); y += 7;
-  doc.setFont('helvetica','normal');
-  doc.setFontSize(10);
-  const summary = [
-    ["Reference", payload.reference],
-    ["Accepted at", new Date(payload.acceptedAt).toLocaleString('en-GB')],
-    ["Name", payload.fullName],
-    ["Email", payload.email],
-    ["Company", payload.company || "Not provided"],
-    ["Role", payload.role || "Not provided"],
-    ["Purpose", payload.purpose || "Not provided"]
-  ];
-  for(const [k,v] of summary){
-    addPageIfNeeded(7);
-    doc.setFont('helvetica','bold'); doc.text(k + ":", margin, y);
-    doc.setFont('helvetica','normal'); doc.text(String(v), 52, y);
-    y += 6;
+  doc.setTextColor(9,75,52);
+  doc.text("Electronic signature", m+18, y+34);
+  if(p.signatureData){
+    try{ doc.addImage(p.signatureData, "PNG", m+18, y+48, 220, 64); }catch(e){}
   }
-  y += 4;
-
-  heading("Agreement terms");
-  const sections = [
-    ["1. Purpose", "The receiving party may be shown, told about, or given access to confidential information relating to a survey app, sales workflow, customer journey, product concept, templates, pricing approach, operational process, demonstration material, documentation, designs, code structure, data capture approach, export packs, commercial plans and related know-how owned or controlled by James Cooling."],
-    ["2. Confidential information", "Confidential information includes anything disclosed verbally, visually, electronically, in writing, by demonstration, by screen share, by test access, by document, by image, by video, or by discussion that relates to the app, product, process, business model, commercial opportunity or supporting materials."],
-    ["3. Obligations", "The receiving party agrees to keep the confidential information private and secure; use it only for evaluating or discussing the opportunity with James Cooling; not copy, record, screenshot, screen-record, reproduce, reverse engineer, share, publish or disclose it without written permission; not use the information to build, commission, assist, market or improve a competing product or process; and only share it with advisers or colleagues where strictly necessary and where equivalent confidentiality duties apply."],
-    ["4. Exclusions", "This agreement does not apply to information that the receiving party can prove was already lawfully known to them, is public through no breach of this agreement, is independently developed without using the confidential information, or is received lawfully from a third party without confidentiality restrictions."],
-    ["5. Ownership", "All intellectual property, concepts, designs, workflows, documents, demonstrations, code, app logic, templates, commercial material and related rights remain the property of James Cooling or his licensors. No licence, assignment or right to use the information is granted except for the limited evaluation purpose above."],
-    ["6. Return and deletion", "On request, the receiving party must promptly return or delete confidential information, including copies, notes, extracts, screenshots, recordings, downloads or derivative material, except where retention is required by law or for professional compliance records."],
-    ["7. Term", "The confidentiality obligations continue for five years from the date of acceptance. Trade secrets and highly sensitive technical or commercial information remain protected for as long as they remain confidential."],
-    ["8. No obligation to proceed", "Nothing in this agreement requires either party to proceed with any transaction, partnership, licence, sale, pilot or commercial arrangement."],
-    ["9. Governing law", "This agreement is governed by the laws of England and Wales, and the courts of England and Wales shall have jurisdiction."],
-    ["10. Electronic acceptance", "By completing the form, ticking the confirmation box and signing electronically, the receiving party agrees that their electronic acceptance is intended to be legally binding."]
-  ];
-  for(const [h,t] of sections){
-    addPageIfNeeded(16);
-    doc.setFont('helvetica','bold');
-    doc.setFontSize(11);
-    doc.setTextColor(9,41,31);
-    doc.text(h, margin, y);
-    y += 6;
-    doc.setFont('helvetica','normal');
-    doc.setTextColor(11,31,24);
-    textBlock(t, margin, 178, 9.5, 4.7);
-    y += 2;
-  }
-
-  addPageIfNeeded(55);
-  heading("Electronic signature");
-  doc.setFont('helvetica','normal');
-  textBlock("The receiving party confirmed acceptance electronically using the form and signature below.", margin, 178, 10, 5);
-  y += 3;
-  if(payload.signatureData){
-    doc.addImage(payload.signatureData, 'PNG', margin, y, 90, 27);
-    y += 32;
-  }
+  doc.setFont("helvetica","normal");
   doc.setFontSize(9);
-  doc.text("Signed by: " + payload.fullName, margin, y); y += 5;
-  doc.text("Email: " + payload.email, margin, y); y += 5;
-  doc.text("Reference: " + payload.reference, margin, y);
+  doc.setTextColor(80,95,88);
+  doc.text("Signed by " + p.fullName + " on " + p.acceptedAt, m+18, y+124);
 
-  return doc.output('blob');
+  return doc.output("blob");
 }
-
-function pdfFileName(payload){
-  return safeFileName(`${payload.fullName} NDA`) + ".pdf";
-}
-
-function makePdfFile(payload, blob){
-  return new File([blob], pdfFileName(payload), {type:'application/pdf'});
-}
-
-function downloadBlob(blob, fileName){
+function downloadBlob(blob, filename){
   const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
+  const a = document.createElement("a");
   a.href = url;
-  a.download = fileName;
+  a.download = filename;
   document.body.appendChild(a);
   a.click();
   a.remove();
-  setTimeout(()=>URL.revokeObjectURL(url), 1500);
+  setTimeout(()=>URL.revokeObjectURL(url), 2000);
 }
-
-async function prepareSignedPdf(){
+function emailBody(p, filename){
+  return [
+    "Hi James,",
+    "",
+    "Please find my signed NDA attached.",
+    "",
+    "Name: " + p.fullName,
+    "Email: " + p.email,
+    "Company: " + (p.company || "Not provided"),
+    "Role: " + (p.role || "Not provided"),
+    "Reference: " + p.reference,
+    "",
+    "Attachment to add: " + filename,
+    "",
+    "Kind regards,",
+    p.fullName
+  ].join("\n");
+}
+async function accept(){
   const err = validate();
-  if(err){ status(err,'err'); return null; }
-  const payload = getPayload(lastPayload && lastPayload.reference);
-  lastPayload = payload;
-  status("Creating signed NDA PDF...", "warn");
-  lastPdfBlob = await createPdf(payload);
-  lastPdfFile = makePdfFile(payload, lastPdfBlob);
-  showResult(payload);
-  return {payload, blob:lastPdfBlob, file:lastPdfFile};
-}
-
-async function shareSignedPdf(){
-  let pack;
+  if(err){ status(err, "err"); return; }
   try{
-    pack = lastPdfBlob && lastPayload && lastPdfFile ? {payload:lastPayload, blob:lastPdfBlob, file:lastPdfFile} : await prepareSignedPdf();
-    if(!pack) return;
+    status("Creating signed PDF...", "warn");
+    const p = payload();
+    const blob = await createPdf(p);
+    const filename = safeFileName(p.fullName + " NDA") + ".pdf";
+    downloadBlob(blob, filename);
 
-    const emailText = buildFallbackEmail(pack.payload);
-    const subject = `${pack.payload.fullName} NDA`;
+    const subject = encodeURIComponent(p.fullName + " NDA");
+    const body = encodeURIComponent(emailBody(p, filename));
+    status("PDF downloaded as <strong>" + filename + "</strong>. Opening email draft to James now. Please attach the downloaded PDF before sending.", "ok");
 
-    if(navigator.canShare && navigator.canShare({files:[pack.file]})){
-      await navigator.share({
-        title: subject,
-        text: emailText,
-        files: [pack.file]
-      });
-      status("Signed NDA PDF prepared. Choose your email app from the share sheet and send it to " + OWNER_EMAIL + ".", "");
-      return;
-    }
-
-    downloadBlob(pack.blob, pdfFileName(pack.payload));
-    openManualEmail();
-    status("Signed NDA PDF downloaded. Your email draft has opened with James Cooling's address and subject. Please attach the downloaded PDF before sending.", "warn");
+    setTimeout(()=>{
+      window.location.href = "mailto:" + OWNER_EMAIL + "?subject=" + subject + "&body=" + body;
+    }, 650);
   }catch(e){
-    if(String(e && e.name) === "AbortError"){
-      status("Sharing was cancelled. You can use Send PDF again or Download PDF.", "warn");
-      return;
-    }
     console.error(e);
-    if(pack && pack.blob){
-      downloadBlob(pack.blob, pdfFileName(pack.payload));
-      openManualEmail();
-      status("PDF was created, but your browser could not attach it automatically. Please attach the downloaded PDF to the email draft.", "warn");
-    }else{
-      status("Could not create or share the PDF: " + (e.message || e), "err");
-    }
+    status("Could not create the signed PDF. Please check the signature and try again. " + (e.message || e), "err");
   }
-}
-
-async function acceptAndProcess(){
-  await shareSignedPdf();
-}
-
-async function downloadPdfOnly(){
-  try{
-    const pack = await prepareSignedPdf();
-    if(!pack) return;
-    downloadBlob(pack.blob, pdfFileName(pack.payload));
-    status("Signed NDA PDF downloaded.", "");
-  }catch(e){ status("Could not create PDF: " + e.message, "err"); }
-}
-
-function openManualEmail(){
-  const p = lastPayload || getPayload();
-  const subject = encodeURIComponent(`${p.fullName || 'Signed'} NDA`);
-  const body = encodeURIComponent(buildFallbackEmail(p));
-  window.location.href = `mailto:${OWNER_EMAIL}?subject=${subject}&body=${body}`;
-}
-
-function downloadConfirmation(){
-  const p = lastPayload || getPayload();
-  const blob = new Blob([buildFallbackEmail(p)], {type:'text/plain'});
-  downloadBlob(blob, safeFileName(`${p.fullName || 'NDA'} confirmation`)+'.txt');
 }
 
 // Signature canvas
 (function setupSignature(){
-  const canvas = $('sigCanvas');
-  const ctx = canvas.getContext('2d');
+  const canvas = $("sigCanvas");
+  const ctx = canvas.getContext("2d");
   ctx.lineWidth = 4;
-  ctx.lineCap = 'round';
-  ctx.strokeStyle = '#09291f';
+  ctx.lineCap = "round";
+  ctx.strokeStyle = "#09291f";
   let drawing = false;
   let hasDrawn = false;
 
@@ -506,30 +351,25 @@ function downloadConfirmation(){
     };
   }
   function start(e){ e.preventDefault(); drawing=true; const p=pos(e); ctx.beginPath(); ctx.moveTo(p.x,p.y); }
-  function move(e){ if(!drawing)return; e.preventDefault(); const p=pos(e); ctx.lineTo(p.x,p.y); ctx.stroke(); hasDrawn=true; signatureData = canvas.toDataURL('image/png'); }
-  function end(){ drawing=false; if(hasDrawn) signatureData = canvas.toDataURL('image/png'); }
+  function move(e){ if(!drawing)return; e.preventDefault(); const p=pos(e); ctx.lineTo(p.x,p.y); ctx.stroke(); hasDrawn=true; signatureData = canvas.toDataURL("image/png"); }
+  function end(){ drawing=false; if(hasDrawn) signatureData = canvas.toDataURL("image/png"); }
 
-  canvas.addEventListener('mousedown', start);
-  canvas.addEventListener('mousemove', move);
-  window.addEventListener('mouseup', end);
-  canvas.addEventListener('touchstart', start, {passive:false});
-  canvas.addEventListener('touchmove', move, {passive:false});
-  window.addEventListener('touchend', end);
+  canvas.addEventListener("mousedown", start);
+  canvas.addEventListener("mousemove", move);
+  window.addEventListener("mouseup", end);
+  canvas.addEventListener("touchstart", start, {passive:false});
+  canvas.addEventListener("touchmove", move, {passive:false});
+  window.addEventListener("touchend", end);
 
-  $('clearSig').onclick=()=>{
+  $("clearSig").onclick=()=>{
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    signatureData='';
+    signatureData="";
     hasDrawn=false;
     status("Signature cleared.", "warn");
   };
 })();
 
-$('acceptBtn').onclick = acceptAndProcess;
-$('downloadPdfBtn').onclick = downloadPdfOnly;
-$('printBtn').onclick = ()=>window.print();
-$('sendAgainBtn').onclick = shareSignedPdf;
-$('openEmailBtn').onclick = openManualEmail;
-$('downloadConfirmationBtn').onclick = downloadConfirmation;
+$("acceptBtn").onclick = accept;
 </script>
 </body>
 </html>
